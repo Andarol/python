@@ -10,9 +10,9 @@ def with_index(list_to_iterate, start=0):
         start += 1
 
 
-arr = [1, 2, 3, 4, 5, 6]
-for i in with_index(arr, 10):
-    print(i)
+#arr = [1, 2, 3, 4, 5, 6]
+#for i in with_index(arr, 10):
+    #print(i)
 
 
 # task2
@@ -34,8 +34,8 @@ def in_range(start, end, step=1):
         iters += 1
 
 
-for i in in_range(-20, -5,2):
-    print(i,'in_range')
+#for i in in_range(-20, -5,2):
+    #print(i,'in_range')
 
 
 # task 3
@@ -63,5 +63,5 @@ class MyIterable:
         return self.list_[index]
 
 
-for i in MyIterable(1, 2, 3, 4, 5, 6, 7, 8, 9):
-    print(i)
+#for i in MyIterable(1, 2, 3, 4, 5, 6, 7, 8, 9):
+    #print(i)

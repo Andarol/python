@@ -9,8 +9,10 @@ def func_return():
 
 
 print('number of variables in functiob', func_return.__code__.co_nlocals)
-#co_nlocals - returns the number of local variables used by the function to get the desired result
-#__code__ - it represents the code object for the function
+
+
+# co_nlocals - returns the number of local variables used by the function to get the desired result
+# __code__ - it represents the code object for the function
 
 # Task 2
 
@@ -58,3 +60,7 @@ def choose_func(nums: list, func1, func2):
 
 
 print(choose_func(nums2, square_nums, remove_negatives))
+f = open('newfile.xml', 'w')
+print(f.read())
+s = open('newfile.xml', 'r')
+print(s.read())
