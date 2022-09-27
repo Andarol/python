@@ -131,6 +131,8 @@ print(library_1.group_by_year('1277'))
 # порівняння між об'єктами класу Fraction
 import math
 
+import math
+
 
 class Fraction:
     def __init__(self, numeretor, denominator):
@@ -139,11 +141,23 @@ class Fraction:
         if self.den == 0:
             raise ZeroDivisionError
 
-    def __add__(self, other):
-        return (self.num * other.den + self.den * other.num) / (other.den * self.den)
+    def return_division(self):
+        pass
 
+    def divider(self):
+        divisor = math.gcd(self.num, self.den)
+        self.num //= divisor
+        self.den //= divisor
+        return self
+
+    def __add__(self, other):
+        self.newnum = self.num * other.den + self.den * other.num
+        self.newden = other.den * self.den
+        return Fraction(self.newnum,self.newden).divider()
     def __sub__(self, other):
-        return (self.num * other.den - self.den * other.num) / (other.den * self.den)
+        self.newnum = self.num * other.den - self.den * other.num
+        self.newden = other.den * self.den
+        return Fraction(self.newnum,self.newden).divider()
 
     def __eq__(self, other):
         return self.num / self.den == other.num / other.den
@@ -161,10 +175,16 @@ class Fraction:
         return self.num / self.den >= other.num / other.den
 
     def __mul__(self, other):
-        return (self.num * other.num) / (self.den * other.den)
+        self.newnum = self.num * other.num
+        self.newden = self.den * other.den
+        return Fraction(self.newnum,self.newden).divider()
+
 
     def __truediv__(self, other):
-        return (self.num * other.den) / (self.den * other.num)
+        self.newnum = self.num * other.den
+        self.newden = self.den * other.num
+        return Fraction(self.newnum,self.newden).divider()
+
 
     def __str__(self):
         return f'{self.num}/{self.den}'
@@ -172,4 +192,4 @@ class Fraction:
 
 a = Fraction(1, 4)
 b = Fraction(2, 6)
-print(a + b)
+print(a * b)
