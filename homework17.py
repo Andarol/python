@@ -141,9 +141,6 @@ class Fraction:
         if self.den == 0:
             raise ZeroDivisionError
 
-    def return_division(self):
-        pass
-
     def divider(self):
         divisor = math.gcd(self.num, self.den)
         self.num //= divisor
