@@ -150,11 +150,12 @@ class Fraction:
     def __add__(self, other):
         self.newnum = self.num * other.den + self.den * other.num
         self.newden = other.den * self.den
-        return Fraction(self.newnum,self.newden).divider()
+        return Fraction(self.newnum, self.newden).divider()
+
     def __sub__(self, other):
         self.newnum = self.num * other.den - self.den * other.num
         self.newden = other.den * self.den
-        return Fraction(self.newnum,self.newden).divider()
+        return Fraction(self.newnum, self.newden).divider()
 
     def __eq__(self, other):
         return self.num / self.den == other.num / other.den
@@ -174,19 +175,20 @@ class Fraction:
     def __mul__(self, other):
         self.newnum = self.num * other.num
         self.newden = self.den * other.den
-        return Fraction(self.newnum,self.newden).divider()
-
+        return Fraction(self.newnum, self.newden).divider()
 
     def __truediv__(self, other):
         self.newnum = self.num * other.den
         self.newden = self.den * other.num
-        return Fraction(self.newnum,self.newden).divider()
-
+        return Fraction(self.newnum, self.newden).divider()
 
     def __str__(self):
-        return f'{self.num}/{self.den}'
+        if self.num == 0:
+            return '0'
+        else:
+            return f'{self.num}/{self.den}'
 
 
-a = Fraction(1, 4)
-b = Fraction(2, 6)
-print(a * b)
+a = Fraction(11, 47)
+b = Fraction(2, 23)
+print([i for i in range(20,-10,-2)])
