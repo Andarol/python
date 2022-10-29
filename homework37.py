@@ -20,7 +20,7 @@ for link in soup.find_all('script'):
 
 def weater_api(city='London'):
     url = 'http://api.openweathermap.org/data/2.5/weather?'
-    key = '8b40d1ab1e233b09645c01f8f3d500b7'
+    key = 'ваш токен'
 
     url_link = url + 'appid=' + key + '&q=' + city
 
